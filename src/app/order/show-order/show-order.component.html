@@ -1,0 +1,19 @@
+
+<table class="table table-striped">
+
+    <tbody *ngFor="let dataItem of Orders">
+      <tr>
+          <td>Numer zamówienia: {{dataItem.Id}}</td>
+          <td>Cena zamówienia: {{dataItem.Price}}</td>
+      </tr>
+      <tr *ngFor="let dish of dataItem.Dishes">
+          <td>Nazwa dania: {{dish.Name}}</td>
+          <td>Cena dania: {{dish.Price}}</td>
+      </tr>
+      <tr>
+            <button type="button" class="btn btn-light mr-1" (click)="deleteClick(dataItem)">
+                Usuń
+            </button>
+        </tr>
+    </tbody>
+</table>
